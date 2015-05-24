@@ -5,8 +5,12 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+  <% if @js_page %>
+	  <%= javascript_include_tag @js_page %>
+	<% end %>
 </head>
-<body>
+<body id="<%= @page_id %>">
 
 <%= yield %>
 

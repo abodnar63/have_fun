@@ -1,4 +1,6 @@
 HaveFun::Application.routes.draw do
+  get "crossword" => "crossword#index"
+
   get "i_love_you/love"
 
   # The priority is based upon order of creation:

@@ -1,0 +1,31 @@
+// Place all the styles related to the Crossword controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#crossword {
+	.crossword-row {
+		line-height: 0px;
+
+		&:last-child {
+			.crossword-cell {
+				border-bottom-width: 1px;
+			}
+		}
+	}
+
+	.crossword-cell {
+		display: inline-block;
+		border: 1px solid black;
+		border-right-width: 0px;
+		border-bottom-width: 0px;
+		box-sizing: border-box;
+
+		&:last-child {
+			border-right-width: 1px;
+		}
+
+		&.active {
+			background-color: gray;
+		}
+	}
+}

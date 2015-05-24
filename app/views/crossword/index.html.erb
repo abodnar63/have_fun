@@ -1,0 +1,9 @@
+<div ng-app="crossword" class="container">
+	<h1>Crossword</h1>
+	<div class="" ng-controller="CrosswordController">
+		<div class="crossword-row" ng-repeat="i in getNumber(grid.columns) track by $index">
+			<div class="crossword-cell" style="width: {{ getCellSize() }}; height: {{ getCellSize() }}" ng-repeat="i in getNumber(grid.columns) track by $index" ng-click="cellClick($event)">
+			</div>
+		</div>
+	</div>
+</div>
