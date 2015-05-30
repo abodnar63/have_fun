@@ -1,8 +1,8 @@
 <div ng-app="crossword" class="container">
 	<h1>Crossword</h1>
 	<div class="" ng-controller="CrosswordController">
-		<div class="crossword-row" ng-repeat="i in getNumber(grid.columns) track by $index">
-			<div class="crossword-cell" style="width: {{ getCellSize() }}; height: {{ getCellSize() }}" ng-repeat="i in getNumber(grid.columns) track by $index" ng-click="cellClick($event)">
+		<div class="crossword-row" ng-repeat="row in grid.cells">
+			<div class="crossword-cell {{ cell.state }}" style="width: {{ getCellSize() }}; height: {{ getCellSize() }}" ng-repeat="cell in row" ng-click="cellClick(cell)" ng-model="cell.state">
 			</div>
 		</div>
 	</div>
