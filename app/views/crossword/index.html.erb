@@ -1,8 +1,22 @@
 <div ng-app="crossword" class="container">
 	<h1>Crossword</h1>
-	<div class="" ng-controller="CrosswordController">
-		<div class="crossword-row" ng-repeat="row in grid.cells">
-			<div class="crossword-cell {{ cell.state }}" style="width: {{ getCellSize() }}; height: {{ getCellSize() }}" ng-repeat="cell in row" ng-click="cellClick(cell)" ng-model="cell.state">
+	<div class="btn btn-default" type="submit">Button</div>
+	<div class="crossword-container" ng-controller="CrosswordController" ng-init="setupData()">
+		<div class="crossword-body">
+			<div class="crossword-row" ng-repeat="row in grid.cells" style="height: {{ cellSize }}">
+				<div class="crossword-cell {{ cell.state }}" style="width: {{ cellSize }}; height: {{ cellSize }}" ng-repeat="cell in row" ng-click="cellClick(cell)" ng-model="cell.state">
+				</div>
+			</div>
+		</div>
+		<div class="crossword-hnumbers">
+			<div class="hnumber-row" ng-repeat="row in crossword.hgroups" style="height: {{ cellSize }};" ng-init="reverseRow = row.length > 0 ? getReverse(row) : []">
+				<div class="hnumber-row-item row-item" ng-repeat="group in reverseRow track by $index">{{ group }}</div>
+			</div>
+		</div>
+
+		<div class="crossword-vnumbers">
+			<div class="vnumber-row" ng-repeat="row in crossword.vgroups" style="width: {{ cellSize }};" ng-init="reverseRow = row.length > 0 ? getReverse(row) : []">
+				<div class="vnumber-row-item row-item" ng-repeat="group in reverseRow track by $index">{{ group }}</div>
 			</div>
 		</div>
 	</div>

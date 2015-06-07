@@ -2,5 +2,6 @@
 // All this logic will automatically be available in application.js.
 
 //= require ../bower_components/angular/angular.js
+//= require ../bower_components/underscore/underscore.js
 
 //= require ./crossword/main.js
